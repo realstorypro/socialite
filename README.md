@@ -1,5 +1,6 @@
 # Socialite 🍸
-"I call everyone 'Darling' because I can't remember their names." — Zsa Zsa Gabor
+"I call everyone 'Darling' because I can't remember their names." 
+— Zsa Zsa Gabor
 
 ### Features
 - [x] Takes screenshots of Airtable articles.
