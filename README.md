@@ -1,24 +1,6 @@
-# README
+# Socialite 🍸
+"I call everyone 'Darling' because I can't remember their names." — Zsa Zsa Gabor
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Features
+- [x] Takes screenshots of Airtable articles.
+- [x] Generates social media cards for airtable articles.
