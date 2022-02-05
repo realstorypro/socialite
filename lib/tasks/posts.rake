@@ -9,17 +9,16 @@ namespace :posts do
     posts = Airtable::Post.unprocessed
     posts[0..5].each do |post|
       url = post.fields['URL']
-      hashtag =  post.fields['Hashtags'].last
+      hashtag = post.fields['Hashtags'].last
       image = pexels.find(keyword: hashtag)
-      social_card = placid.generate(title: post.fields["Text"],
-                      category: hashtag,
-                      image: image)
 
-      byebug
+      generated_screenshot = screenshot.render(url: url)
+      social_card = placid.generate(title: post.fields['Text'],
+                                    category: hashtag,
+                                    image: image)
 
-
-
-      post["Screenshot"] = [{ url: screenshot.render(url: url) }]
+      post['Screenshot'] = [{ url: generated_screenshot }]
+      post['Social'] = [{ url: social_card }]
 
       post.save
     end
