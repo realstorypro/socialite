@@ -6,7 +6,7 @@ class Pexels
   def initialize
     # Grab up to 320 images
     @per_page = 80
-    @up_to_pages = 5
+    @up_to_pages = 6
   end
 
   def find(keyword:)

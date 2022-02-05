@@ -10,7 +10,10 @@ class EnchanceJob < ApplicationJob
     placid = Placid.new
 
     posts = Airtable::Post.unprocessed
-    posts[0..5].each do |post|
+
+    # we want to process no more then 20 posts per job
+    # to avoid the rate limit errors
+    posts[0..20].each do |post|
       url = post.fields['URL']
       hashtag = post.fields['Hashtags'].last
       image = pexels.find(keyword: hashtag)
