@@ -19,6 +19,7 @@ namespace :posts do
 
       post['Screenshot'] = [{ url: generated_screenshot }]
       post['Social'] = [{ url: social_card }]
+      post['Processed'] = true
 
       post.save
     end
