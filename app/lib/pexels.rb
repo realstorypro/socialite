@@ -3,8 +3,10 @@
 class Pexels
   API_URL = 'https://api.pexels.com/v1/search'
 
-  def initialize()
+  def initialize
+    # A total of 240 images
     @per_page = 80
+    @up_to_pages = 4
   end
 
   def find(keyword:)
@@ -17,9 +19,21 @@ class Pexels
       'Authorization': ENV['PEXELS']
     }
 
-    rsp = HTTParty.get(API_URL, query: query, headers: headers)
+    photos = []
 
-    random_photo = rsp['photos'].shuffle.last
-    random_photo['src']['original']
+    rsp = HTTParty.get(API_URL, query: query, headers: headers)
+    photos.push(*rsp['photos'])
+
+    page = 2
+
+    while page < @up_to_pages && !rsp['next_page'].nil?
+      query['page'] = page
+      rsp = HTTParty.get(API_URL, query: query, headers: headers)
+      photos.push(*rsp['photos'])
+
+      page += 1
+    end
+
+    photos.sample['src']['original']
   end
 end
