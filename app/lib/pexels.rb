@@ -4,9 +4,9 @@ class Pexels
   API_URL = 'https://api.pexels.com/v1/search'
 
   def initialize
-    # A total of 240 images
+    # Grab up to 320 images
     @per_page = 80
-    @up_to_pages = 4
+    @up_to_pages = 6
   end
 
   def find(keyword:)
