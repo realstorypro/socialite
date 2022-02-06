@@ -6,7 +6,12 @@ class Placid
 
   TEMPLATE_MAP = {
     science: 'lgf64mzcv',
-    business: 'p5dxi0hrj'
+    business: 'p5dxi0hrj',
+    inspiration: 'umzhty0na',
+    health: '4rsc0t81g',
+    humor: 'gwrnyc2gp',
+    crypto: '07e3hcbpv',
+    tech: 'y1v4ab6a7'
   }.freeze
 
   def generate(title:, category:, image:)
