@@ -23,7 +23,7 @@ class EnchanceJob < ApplicationJob
                                     category: hashtag,
                                     image: image)
 
-      post['Screenshot'] = [{ url: generated_screenshot }]
+      post['Screenshot'] = [{ url: generated_screenshot }] if generated_screenshot
       post['Social'] = [{ url: social_card }]
       post['Processed'] = true
 
