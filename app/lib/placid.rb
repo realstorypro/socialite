@@ -31,7 +31,7 @@ class Placid
           "text": title
         },
         "tag": {
-          "text": category
+          "text": "##{category}"
         }
       }
     }
